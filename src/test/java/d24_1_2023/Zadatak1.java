@@ -27,13 +27,13 @@ public class Zadatak1 {
 
         driver.manage().window().maximize();
         driver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-
-        driver.findElement(By.xpath("//form/div[1]/div/div[2]")).click();
-        driver.findElement(By.xpath("//form/div[1]/div/div[2]")).sendKeys("Admin");
-        driver.findElement(By.xpath("//form/div[2]/div/div[2]")).sendKeys("admin123");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin123");
         driver.findElement(By.xpath("//*[contains(@type, 'submit')]")).click();
         Thread.sleep(5000);
-        driver.findElement(By.xpath("//input[@class='oxd-input oxd-input--active'")).sendKeys("Me");
+        driver.findElement(By.xpath("//input[@class='oxd-input oxd-input--active']")).sendKeys("Me");
         driver.findElement(By.xpath("//a[@href='/web/index.php/time/viewTimeModule']")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).click();

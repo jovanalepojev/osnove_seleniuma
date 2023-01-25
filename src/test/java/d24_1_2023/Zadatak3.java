@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Zadatak3 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 //        Napisati program koji vrsi dodavanje 5 redova
 //        Maksimizirati prozor
 //        Ucitati stranicu https://www.tutorialrepublic.com/snippets/bootstrap/table-with-add-and-delete-row-feature.php
@@ -28,12 +28,16 @@ public class Zadatak3 {
 
         for (int i = 0; i < 5; i++) {
             driver.findElement(By.xpath("//input[@name='name']")).sendKeys("Jovana Lepojev");
+            Thread.sleep(1000);
             driver.findElement(By.xpath("//input[@name='department']")).sendKeys("IT");
+            Thread.sleep(1000);
             driver.findElement(By.xpath("//input[@name='phone']")).sendKeys("555-555-5555");
-            driver.findElement(By.xpath("//table/tbody/tr[" + (i + 2) + "]/td[4]/button[1]")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//table/tbody/tr[" + (i + 2) + "]/td[4]/a[@class='add']")).click();
 
         }
 
+        Thread.sleep(5000);
         driver.quit();
 
 
